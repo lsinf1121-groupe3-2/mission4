@@ -1,5 +1,14 @@
 %%Énoncé
-Énoncé
+Nous considérons T et U deux arbres (2,4) mémorisant respectivement n et m clés tels que toutes les clés dans T sont strictement inférieures à tous les clés dans U. Proposez un algorithme pour fusionner T et U dans un seul arbre (2,4). Ce nouvel arbre (2,4) doit donc contenir toutes les clés de T et toutes les clés de U. La complexité temporelle de votre algorithme doit être en $O(log n + log m)$
+
+ \begin{itemize}
+
+	\item Appliquez votre algorithme sur les deux arbres illustrés ci-dessous. Illustrez graphiquement la construction de l'arbre résultat pour chaque étape principale de votre algorithme. Note: votre algorithme doit pouvoir s'appliquer à n'importe quelle paire d'arbres (2,4) satisfaisant les conditions reprises dans l'énoncé de la question. On vous demande simplement d'illustrer le fonctionnement de votre algorithme général sur un cas particulier.
+	
+	\item Justifier pourquoi la complexité temporelle de votre algorithme est bien en $O(log n + log m)$, où n et m correspondent aux nombres de clés respectivement dans T et U.
+	
+	Opération d'ajout peut causer un overflow/une mauvaise taille dans l'arbre 1 comme dans l'arbre 2, alors put qui s'effectue en log(n) où n est le nombre d'entrées de l'arbre peut se propager vers le haut de l'arbre complet (arbre 1 précédent = n entrées) mais aussi vers le bas de l'arbre complet (arbre 2 précédent = m entrées) et ainsi s'effectuer en O(log(n)+log(m)) opérations.
+	
+ \end{itemize}
 
 %%Réponse
-Réponse
