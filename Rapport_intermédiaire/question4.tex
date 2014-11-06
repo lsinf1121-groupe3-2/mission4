@@ -1,5 +1,67 @@
-%%Énoncé
-Énoncé
+Partant d’un arbre binaire de recherche initialement vide, comment se présente
+l’arbre après y avoir inséré les clés 12, 5, 10, 3, 13, 14, 15, 17, 18, 15 ? Pour
+les mêmes données comment se présenterait l’arbre finalement obtenu s’il s’agissait
+d’un arbre (2,4) ? Pour les mêmes données comment se présenterait l’arbre
+finalement obtenu s’il s’agissait d’un B-arbre d’ordre 4 ou d’un Splay Tree ? Cet
+exemple illustre-t-il les avantages ou inconvénients de ces différentes structures
+de données ? Pourquoi ? (Alexandre)
 
 %%Réponse
-Réponse
+\subsection*{Arbre binaire de recherche}
+\begin{tikzpicture}
+\node[circle,draw](z){$30$}
+	child{
+		node[circle,draw]{5} child{node[circle,draw] {3}} child{node[circle,draw] {10}}}
+	child{
+		node[circle,draw]{13} child[missing] 
+			child{
+				node[circle,draw]{14}  child[missing] child {
+					node[circle,draw]{15}  child[missing] child{
+						node[circle,draw]{17}   child{node[circle,draw] {15}}  child{node[circle,draw] {18}}
+					}
+				}
+			}};
+\end{tikzpicture}
+
+\subsection*{Arbre (2,4)}
+\begin{tikzpicture}
+\tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
+\tikzstyle{every node}=[bplus]
+\tikzstyle{level 1}=[sibling distance=20mm]
+\node {10\nodepart{two} 13 \nodepart{three} 15}
+  child {node {3 \nodepart{two} 5}}
+  child {node {12}}
+  child {node {14}} 
+  child {node {16 \nodepart{two} 17 \nodepart{three} 18}};
+  \end{tikzpicture}
+  
+  \subsection*{B-arbre d'ordre 4}
+  \begin{tikzpicture}
+\tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
+\tikzstyle{every node}=[bplus]
+\tikzstyle{level 1}=[sibling distance=60mm]
+\tikzstyle{level 2}=[sibling distance=15mm]
+\node {12}
+  child {node {5}
+    child {node {3}}
+    child {node {10}}
+  } 
+  child {node {14 \nodepart{two} 15}
+    child {node {13}}
+    child {node {15}}
+    child {node {17 \nodepart{two}18}}    
+  }
+;\end{tikzpicture}
+  \subsection*{Splay tree}
+  \begin{tikzpicture}
+  \tikzstyle{bplus}=[circle,draw]
+  \tikzstyle{every node}=[bplus]
+\node{$15$}
+	child{node{15} child{node{14} child{node{13} child{node{5} child{node{3}} child{node{12} child{node{10}} child[missing]}} child[missing]} child[missing]} child[missing]}
+	child{node{18} child{node{17}} child[missing]}
+;\end{tikzpicture}
+
+\subsection*{Conclusion}
+
+Ces différents schémas permettent de mettre en évidence les différences qu'ils existent entre eux comme la profondeur de l'arbre, le nombre maximum d'élément fils d'un nœud...
+  
