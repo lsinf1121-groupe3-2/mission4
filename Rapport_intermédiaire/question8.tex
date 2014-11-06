@@ -1,5 +1,24 @@
 %%Énoncé
-Énoncé
 
+Supposons que nous disposions d'un arbre binaire de recherche mémorisant des clés entières entre 1 et 1000 et que nous y cherchions la clé 363. Parmi les séquences suivantes, quelles sont celles qui ne peuvent pas correspondre à la séquence des clés examinées ?
+
+\begin{itemize}
+
+\item 2, 252, 401, 398, 330, 344, 397, 363
+\item 924, 220, 911, 244, 898, 258, 362, 363
+\item 925, 202, 911, 240, 912, 245, 363
+\item 2, 399, 387, 219, 266, 382, 381, 278, 363
+\item 935, 278, 347, 621, 29
+
+\end{itemize}
+\textit{(Jonathan)} \\
 %%Réponse
-Réponse
+\\ Toutes ces séquences sont possible sauf deux d'entre elle.
+La troisième séquences ainsi que la dernière des séquences.
+
+En effet pour la séquence : 925, 202, 911, 240, \underline{912}, 245, 363
+Le résultat 912 ne peut pas se trouvé dans la séquence des clés. En effet après 911 nous nous trouvons dans son sous arbre gauche. Il est donc impossible de trouver la clés 912 dans ce sous arbre de gauche.
+
+
+Pour la séquence 935, 278, 347, 621, \underline{299}, 392, 358, 363
+Lors de la recherche après avoir passé la clés 347 nous nous trouvons dans son sous arbre de gauche. Étant donné que la clés suivante est 612 nous nous trouvons forcément à une valeur supérieure à 347, mais inférieure à 621. Il est donc impossible de rencontrer la valeur 299.
