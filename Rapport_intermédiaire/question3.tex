@@ -6,6 +6,7 @@ et DSAJ-6 page 396) où \textit{k} est une clé présente dans un arbre binaire 
 
 Quelles sont les complexités temporelles de vos algorithmes en fonction de \textit{h} (la
 hauteur de l’arbre) et en fonction de \textit{n} (le nombre de noeuds de l’arbre) ?
+(Tanguy)\footnote{Sources : \url{http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html} et "TreeMap.java" issu du SDK 7}
 \\
 \\
 %%Réponse
@@ -14,4 +15,4 @@ Algorithme pour \textit{firstEntry()}
 Algorithme pour \textit{higherEntry(k)}
 \lstinputlisting[language=java, inputencoding=utf8]{higherEntryMethod.java}
 
-Pour les deux méthodes, la complexité temporelle est en $O (h)$ par rapport à la hauteur car il faut descendre tout en bas de l'arbre et en $O (\log (n))$ en fonction du nombre de noeuds car on ne tient compte que du sous-arbre de gauche à chaque itération de la boucle \textit{while}.
+Pour les deux méthodes, la complexité temporelle est en $O (h)$ par rapport à la hauteur car il faut descendre tout en bas de l'arbre et en $O (\log (n))$ en fonction du nombre de noeuds car on ne tient compte que du sous-arbre de gauche à chaque itération.
