@@ -5,9 +5,9 @@ import java.util.HashMap;
 import business.Journal;
 
 
-public class JournalsDictionary extends HashMap<String, Journal>{
+public class JournalsDictionary extends HashMap<String, Journal> {
 	
-	public JournalsDictionary(){
+	public JournalsDictionary() {
 		super();
 	}
 }

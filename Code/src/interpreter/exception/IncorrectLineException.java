@@ -1,19 +1,19 @@
 package interpreter.exception;
 
-public class IncorrectLineException extends Exception{
+public class IncorrectLineException extends Exception {
 	
     /**
-     * Creates a new instance of <code>ParentExpectedException</code> without detail
-     * message.
+     * Crée une nouvelle instance de <code>ParentExpectedException</code> sans message détaillé.
      */
 	public IncorrectLineException() {
+	
 	}
-
+	
     /**
-     * Constructs an instance of <code>IncorrectLineException</code> with the
-     * specified detail message.
+     * Construit une instance de <code>IncorrectLineException</code> avec un
+     * message détaillé spécifique.
      *
-     * @param msg the detail message.
+     * @param msg le message détaillé.
      */
     public IncorrectLineException(String msg) {
         super(msg);

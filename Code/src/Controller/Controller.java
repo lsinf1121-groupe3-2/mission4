@@ -33,7 +33,7 @@ public class Controller {
      * @post le fichier renseigné dans la variable commandFile est ouvert et prêt à être lu; la variable br est initialisée.
      * Si le fichier n'existe pas, le programme se termine avec le code d'erreur -2.
      */
-    private void initializeReader(){
+    private void initializeReader() {
 		try {
 			InputStream ips = new FileInputStream(commandFile);
 			InputStreamReader ipsr = new InputStreamReader(ips);
@@ -49,7 +49,7 @@ public class Controller {
      * @post Les fichiers ouverts par le programme sont fermés.
      * Le programme se termine avec le code d'erreur -4 si il ne parvient pas à fermer correctement les fichiers.
      */
-    private void closeFiles(){
+    private void closeFiles() {
     	try {
 			br.close();
 		} catch (IOException e) {
@@ -63,11 +63,11 @@ public class Controller {
      * @post Le fichier d'entrée à été entièrement lu et interprété.
      * Les journaux ont été ajoutés au dictionnaire
      */
-    private void interpreteFile(){
+    private void interpreteFile() {
     	String commandLigne;
 		try {
-			commandLigne = br.readLine(); //read the first line and drop it
-			while ((commandLigne = br.readLine())!=null){
+			commandLigne = br.readLine(); //lit la première ligne puis passe à la suivante
+			while ((commandLigne = br.readLine())!=null) {
 				if (!commandLigne.equalsIgnoreCase(""))
 				{
 					 Journal result = csvInterpereter.interprete(commandLigne); 
@@ -101,7 +101,7 @@ public class Controller {
     }
 
     /**
-     * @param args the command line arguments
+     * @param args les arguments de la ligne de commande
      */
     public static void main(String[] args) {
         Controller applicationController = new Controller();

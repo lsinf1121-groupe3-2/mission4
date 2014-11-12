@@ -13,23 +13,24 @@ public class Interpreter {
 	 */
 	public Journal interprete(String commandLigne) throws IncorrectLineException {
 		Journal journal = null;
-		if(commandLigne != null && !commandLigne.isEmpty()){
+		if(commandLigne != null && !commandLigne.isEmpty()) {
 			String args[] = commandLigne.split(",", -1);
 			int extraFields = args.length - 8;
-			if(extraFields > 0){
-				//there was a ',' inside a field.
-				//guess it's in the title field so merge these fields
-				for(int i = 2; i < 2 + extraFields ; i++){
+			if(extraFields > 0) {
+				//Il y a une ',' à l'intérieur d'un champ.
+				//On suppose que cette virgule se trouve dans le champ du titre
+				//donc on va fusionner ces champs
+				for(int i = 2; i < 2 + extraFields ; i++) {
 					args[1] += args[i];
 				}
 				for(int i = 2; i < 8 ; i++) {
 					args[i]=args[i+extraFields];
 				}
 			}
-			if (extraFields < 0){
+			if (extraFields < 0) {
 				throw new IncorrectLineException();
 			}
-			else{
+			else {
 				journal = new Journal();
 				journal.setRank(args[0]);
 				journal.setTitle(args[1]);
