@@ -1,6 +1,7 @@
 package Controller;
 
 import interpreter.Interpreter;
+import interpreter.exception.IncorrectLineException;
 
 import java.io.*;
 
@@ -77,8 +78,10 @@ public class Controller {
 				}
 			}
 		} catch (IOException e) {
-			System.out.println("Error while I/O operations");
+			System.err.println("Error while I/O operations");
 			System.exit(-5);
+		} catch (IncorrectLineException e) {
+			System.err.println("Incorrect Line");
 		}
     }
 

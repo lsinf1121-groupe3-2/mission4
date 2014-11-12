@@ -1,5 +1,6 @@
 package interpreter;
 
+import interpreter.exception.IncorrectLineException;
 import business.Journal;
 
 public class Interpreter {
@@ -8,20 +9,25 @@ public class Interpreter {
 	 * 
 	 * @param commandLigne
 	 * @return le journal ou null si la ligne n'a pas pu etre interprétée
+	 * @throws IncorrectLineException 
 	 */
-	public Journal interprete(String commandLigne) {
+	public Journal interprete(String commandLigne) throws IncorrectLineException {
 		Journal journal = null;
 		if(commandLigne != null && !commandLigne.isEmpty()){
 			String args[] = commandLigne.split(",", -1);
-			if(args.length > 8){
+			int extraFields = args.length - 8;
+			if(extraFields > 0){
 				//there was a ',' inside a field.
 				//guess it's in the title field so merge these fields
-				for(int i = 2; i < args.length - 8; i++){
+				for(int i = 2; i < 2 + extraFields ; i++){
 					args[1] += args[i];
 				}
+				for(int i = 2; i < 8 ; i++) {
+					args[i]=args[i+extraFields];
+				}
 			}
-			if (args.length < 8){
-				System.out.println("incorrect line!");
+			if (extraFields < 0){
+				throw new IncorrectLineException();
 			}
 			else{
 				journal = new Journal();
@@ -38,5 +44,4 @@ public class Interpreter {
 		}
 		return null;
 	}
-
 }
