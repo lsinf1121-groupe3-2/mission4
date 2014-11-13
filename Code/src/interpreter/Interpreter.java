@@ -3,6 +3,11 @@ package interpreter;
 import interpreter.exception.IncorrectLineException;
 import business.Journal;
 
+/**
+ * 
+ * @author Repris depuis la mission 3 + Modifié par Boris
+ *
+ */
 public class Interpreter {
 
 	/**
