@@ -75,18 +75,21 @@ public class Controller {
 			while ((commandLigne = br.readLine())!=null) {
 				if (!commandLigne.equalsIgnoreCase(""))
 				{
-					 Journal result = csvInterpereter.interprete(commandLigne); 
-					 if (result!=null)
-					 {
-						 searcher.insert(result);
-					 }
+					try{
+						 Journal result = csvInterpereter.interprete(commandLigne); 
+						 if (result!=null)
+						 {
+							 searcher.insert(result);
+						 }
+					}
+					catch (IncorrectLineException e) {
+						System.err.println("Incorrect Line");
+					}
 				}
 			}
 		} catch (IOException e) {
 			System.err.println("Error while I/O operations");
 			System.exit(-5);
-		} catch (IncorrectLineException e) {
-			System.err.println("Incorrect Line");
 		}
     }
 
