@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import business.Journal;
 import business.Searcher;
-import dictionary.JournalsDictionary;
 
 /**
  * 

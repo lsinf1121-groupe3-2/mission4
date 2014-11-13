@@ -6,7 +6,6 @@ import interpreter.exception.IncorrectLineException;
 import java.io.*;
 
 import dialog.Dialog;
-import dictionary.JournalsDictionary;
 import business.Journal;
 import business.Searcher;
 
