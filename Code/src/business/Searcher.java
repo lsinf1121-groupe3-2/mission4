@@ -35,8 +35,8 @@ public class Searcher {
 		journalsByRank.put(journal.getRank(), journal);
 	}
 	
-	public Journal searchByTitle(String title){
-		return allJournals.get(title).next();
+	public Iterator<Journal> searchByTitle(String title){
+		return allJournals.get(title);
 	}
 	
 	public Iterator<Journal> searchByForName2n(String forName2){
@@ -44,7 +44,7 @@ public class Searcher {
 	}
 	
 	public Iterator<Journal> searchByRank(String rank){
-		return journalsByForName2.get(rank);
+		return journalsByRank.get(rank);
 	}
 	
 }
