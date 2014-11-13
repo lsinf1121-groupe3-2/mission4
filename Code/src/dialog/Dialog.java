@@ -3,17 +3,19 @@ package dialog;
 import java.util.Scanner;
 
 import business.Journal;
+import business.Searcher;
 import dictionary.JournalsDictionary;
 
+/**
+ * 
+ * @author Mission 3 + Tanguy
+ *
+ */
 public class Dialog {
-	private JournalsDictionary dico;
+	private Searcher searcher;
 	
-	public Dialog (JournalsDictionary dico) {
-		this.dico = dico;
-	}
-	
-	public Journal search(String title) {
-		return dico.get(title);
+	public Dialog (Searcher s) {
+		this.searcher = s;
 	}
 	
 	/**

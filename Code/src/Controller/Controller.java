@@ -8,24 +8,29 @@ import java.io.*;
 import dialog.Dialog;
 import dictionary.JournalsDictionary;
 import business.Journal;
+import business.Searcher;
 
 /**
  *
- * @author Tanguy
+ * @author Mission 3 + Tanguy
  */
 public class Controller {
 
     Interpreter csvInterpereter;
     String commandFile = "Journals.csv";
     BufferedReader br;
-    JournalsDictionary catalog;
+    Dialog userDialog;
+    Searcher searcher;
+    
 
     /**
      * @pre --
      * @post l'objet est dans un état cohérent et prêt à être utilisé
      */
     public Controller() {
+    	searcher = new Searcher();
         this.csvInterpereter = new Interpreter();
+    	userDialog = new Dialog (searcher);
     }
     
     /**
@@ -73,7 +78,7 @@ public class Controller {
 					 Journal result = csvInterpereter.interprete(commandLigne); 
 					 if (result!=null)
 					 {
-						 catalog.put(result.getTitle(), result);
+						 searcher.insert(result);
 					 }
 				}
 			}
@@ -92,10 +97,8 @@ public class Controller {
      * Les fichiers ont été fermés correctement.
      */
     public void start(String[] args) {
-    	catalog = new JournalsDictionary();
     	this.initializeReader();
 		this.interpreteFile();
-		Dialog userDialog = new Dialog (catalog);
 		userDialog.start();
 		this.closeFiles();
     }

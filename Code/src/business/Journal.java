@@ -1,7 +1,7 @@
 package business;
 
 
-public class Journal {
+public class Journal implements Comparable<Journal>{
 	private String rank;
 	private String title;
 	private String foR1;
@@ -111,6 +111,15 @@ public class Journal {
 	 */
 	public void setFoR3Name(String foR3Name) {
 		this.foR3Name = foR3Name;
+	}
+
+	@Override
+	public int compareTo(Journal arg0) {
+		return this.title.compareTo(arg0.title);
+	}
+	
+	public boolean equals(Object o){
+		return this.title.equals(o);
 	}
 	
 }
