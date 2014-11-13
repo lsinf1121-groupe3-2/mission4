@@ -26,7 +26,7 @@ public class Interpreter {
 				//On suppose que cette virgule se trouve dans le champ du titre
 				//donc on va fusionner ces champs
 				for(int i = 2; i < 2 + extraFields ; i++) {
-					args[1] += args[i];
+					args[1] += "," + args[i]; //rajout de la virgule
 				}
 				for(int i = 2; i < 8 ; i++) {
 					args[i]=args[i+extraFields];
