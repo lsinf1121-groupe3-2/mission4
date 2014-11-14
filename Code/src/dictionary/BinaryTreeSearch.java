@@ -8,24 +8,33 @@ import java.util.TreeSet;
  * 
  * @author Alexandre
  *
- * @param <K>
- * @param <V>
+ * Implémentation de BinaryTreeSearch
+ * 
  */
 public class BinaryTreeSearch<K, V> {
 	private Node root;
 	
 	private Comparator<K> comparator;
 	
+	/**
+	 * Constructeur
+	 */
 	public BinaryTreeSearch(Comparator<K> comparator) {
 		this.comparator = comparator;
 	}
 	
+	/**
+	 * Implémentation de Node
+	 */
 	private class Node {
 		private K key;
 		private TreeSet<V> values = new TreeSet<V>();
 		private Node left;
 		private Node right;
 		
+		/**
+		 * Constructeur
+		 */
 		public Node(K key, V value) {
 			this.key = key;
 			this.values.add(value);
@@ -34,10 +43,27 @@ public class BinaryTreeSearch<K, V> {
 		}
 	}
 	
+	
+	/**
+	 *  @pre	--
+	 *  @post	-	retourne null si la clé recherchée k n'est pas dans 
+	 * 				l'arbre
+	 * 			-	retourne un itérateur contenant les valeurs du noeud
+	 * 				correspondant à la clé k 
+	 */
 	public Iterator<V> get(K key) {
 		return get(root, key);
 	}
-	
+	/**
+	 * @pre  	--
+	 * @post 	- 	retourne null si le noeud est vide
+	 * 			- 	lance une recherche dans l'arbre de gauche si la clé
+	 * 				recherchée k est inférieure à la clé de node
+	 * 			-	lance une recherche dans l'arbre de droite si la clé
+	 * 				recherchée k est supérieur à la clé de node
+	 * 			- 	retourne un itérateur contenant les valeurs du noeud
+	 * 				si la clé recherchée k est égale à la clé de node
+	 */
 	private Iterator<V> get(Node node, K key) {
 		if(node == null) return null;
 		int comp = comparator.compare(key, node.key);
@@ -48,10 +74,19 @@ public class BinaryTreeSearch<K, V> {
 		return node.values.iterator();
 	}
 	
+	/**
+	 * @pre		--
+	 * @post	value est ajouté à l'arbre root
+	 */
 	public void put(K key, V value) {
 		root = put(root, key, value);
 	}
 	
+	/**
+	 * @pre		--
+	 * @post	- 	crée un nouvelle arbre si root est vide
+	 * 			-	ajoute value à l'arbre root
+	 */
 	private Node put(Node node, K key, V value) {
 		if(node == null) return new  Node(key, value);
 		int comp = comparator.compare(key, node.key);
