@@ -62,9 +62,9 @@ associées à une revue scientifique en fonction de plusieurs type de recherche 
 
 \section{Implémentation}
 
-La quasi-totalité du code de la mission précédente a été repris. À celui-ci quelques modifications ont été effectuées afin de tenir compte des remarques de la correction croisée. Par exemple, une exception est lancée en cas d'une ligne mal encodé. De plus nos messages d'erreurs sont maintenant affichés sur la sortie d'erreur au lieu de la sortie standard. La fonction main a été sortie de la classe \verb+Controller+ afin d'avoir un programme encore plus modulaire.
+La quasi-totalité du code de la mission précédente a été repris. À celui-ci quelques modifications ont été effectuées afin de tenir compte des remarques de la correction croisée. Par exemple, une exception est lancée en cas d'une ligne mal encodée. De plus nos messages d'erreurs sont maintenant affichés sur la sortie d'erreur au lieu de la sortie standard. La fonction main a été sortie de la classe \verb+Controller+ afin d'avoir un programme encore plus modulaire.
 
-De plus deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permettent de stocker et d'aller recherche les journaux pour les différents types de champ.
+De plus, deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permettent de stocker et d'aller rechercher les journaux pour les différents types de champs.
 \newpage
 \section{Diagramme UML de classe}
 
@@ -74,25 +74,25 @@ De plus deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permette
 \subsection*{Question 9}
 
 \subsection*{Question 10}
-Étant donné que la mission précédente était fort similaire à celle-ci, il a été plus simple de se lancer dans le projet. 
-La totalité des classes de l'ancienne mission ont été reprises. Certaine comme \verb+Dialogue+ a été modifié afin de correspondre aux nouvelles exigences de la mission, car désormais plusieurs types de recherches sont possibles. 
+Étant donné que la mission précédente était fortement similaire à celle-ci, il a été plus simple de se lancer dans le projet. 
+La totalité des classes de l'ancienne mission ont été reprises. Certaines, comme \verb+Dialogue+, ont été modifiées afin de correspondre aux nouvelles exigences de la mission, car désormais plusieurs types de recherches sont possibles. 
 
-Une nouvelle classe \verb+BinaryTreeSearch+ a été ajouté afin d'obtenir par catégorie de rechercher un arbre \verb+TreeSet+ où les champs sont triés par ordre alphabétique, celle-ci remplace l'ancienne classe \verb+JournalDictionnary+
+Une nouvelle classe \verb+BinaryTreeSearch+ a été ajoutée afin d'obtenir par catégorie de recherche un arbre \verb+TreeSet+, où les champs sont triés par ordre alphabétique. Celle-ci remplace l'ancienne classe \verb+JournalDictionnary+.
 
-Une autre classe ajoutée est la classe \verb+Search+ qui permet de définir les huit types de recherche, un sur chaque champ du journal.
+Une autre classe ajoutée est \verb+Search+ qui permet de définir les huit types de recherche, un sur chaque champ du journal.
 
-Notre mission précédente était déjà fort générique, mais à présent elle l'est encore plus. Chaque classe à sa propre tâche à effectuer. Si le besoin devient nécessaire de changer le programme en utilisant un autre type de stockage par exemple, ou une nouvelle interface pour l'utilisateur, il sera très facile pour un programmeur externe d'implémenter le code source.
+Notre mission précédente était déjà fortement générique, mais à présent elle l'est davantage. Chaque classe a sa propre tâche à effectuer. Si le besoin devient nécessaire de changer le programme, par exemple en utilisant un autre type de stockage ou une nouvelle interface pour l'utilisateur, il sera très facile pour un programmeur externe d'implémenter le code source.
 
-Pour ce faire il peut modifier les classes qui l'intéressent et cela fonctionnera toujours sans toucher à aucune autres classes du code.
+Pour ce faire, il peut modifier les classes qui l'intéressent et cela fonctionnera toujours sans toucher à aucune autre classe du code.
 
 \subsection*{Question 11}
 
-L'erreur la plus courante est le nombre incorrect de virgule dans une ligne du fichier texte. Dans le cas d'un manque de virgule la ligne est tout simplement ignorée et le programme continue de parser les autres lignes.
+L'erreur la plus courante est le nombre incorrect de virgules dans une ligne du fichier texte. Dans le cas d'un manque de virgule, la ligne est tout simplement ignorée et le programme continue de parser les lignes suivantes.
 
 Il faut aussi tout particulièrement faire attention aux virgules dans la ligne de texte qui ne sont pas utilisées comme séparateur de champ, mais qui font partie du nom contenu dans ce champ.
-Dans ce cas nous supposons que ces virgules se trouvent en réalité dans le titre et nous fusionnons les deux champs après le rang en un seul champ qui sera le titre.
+Dans ce cas, nous supposons que ces virgules se trouvent en réalité dans le titre et nous fusionnons les deux champs après le rang en un seul champ qui sera le titre.
 
-Une autre erreur serait une ligne vide, mais nous nous retrouverons alors dans le cas de virgules manquantes
+Une autre erreur serait une ligne vide, mais nous nous retrouverons alors dans le cas de virgules manquantes.
 
 Si les champs d'une ligne sont en désordre, alors il nous est impossible de corriger cette erreur.
 \end{document}
@@ -110,5 +110,4 @@ Si les champs d'une ligne sont en désordre, alors il nous est impossible de cor
 \end{itemize}
 \section{Difficultés rencontrées}
 
-Grâce aux questions de la séance intermédiaire, nous avons décortiqué le problème ce qui nous a permis de préparer correctement le partie implémentation. Nous n'avons donc
-pas rencontré de réel problème lors de la partie développement du programme. De plus la mission précédente nous a permis de partir sur de bonnes bases.
+Grâce aux questions de la séance intermédiaire, nous avons décortiqué le problème ce qui nous a permis de préparer correctement le partie implémentation. Nous n'avons donc pas rencontré de réels problèmes lors de la partie développement du programme. De plus, la mission précédente nous a permis de partir sur de bonnes bases.
