@@ -57,23 +57,37 @@
 \setcounter{page}{1}
 \section{Introduction}
 
-Dans le cadre du cours "Algorithmique et structures de données", il nous a été demandé de concevoir et d'implémenter une application permettant d'accéder aux informations
-associées à une revue scientifique en fonction de plusieurs type de recherche et ce en implémentant une base de donnée basé à partir de \verb+Tree+.
+Dans le cadre du cours "Algorithmique et structures de données", il nous a été demandé de concevoir et d'implémenter une application permettant d'accéder aux informations associées à une revue scientifique en fonction de plusieurs type de recherche et ce, en implémentant une base de donnée basé à partir de \verb+Tree+.
 
 \section{Implémentation}
 
-La quasi-totalité du code de la mission précédente a été repris. À celui-ci quelques modifications ont été effectuées afin de tenir compte des remarques de la correction croisée. Par exemple, une exception est lancée en cas d'une ligne mal encodée. De plus nos messages d'erreurs sont maintenant affichés sur la sortie d'erreur au lieu de la sortie standard. La fonction main a été sortie de la classe \verb+Controller+ afin d'avoir un programme encore plus modulaire.
+La quasi-totalité du code de la mission précédente a été repris. À celui-ci, quelques modifications ont été effectuées afin de tenir compte des remarques de la correction croisée. Par exemple, une exception est lancée en cas d'une ligne mal encodée. De plus, nos messages d'erreur sont maintenant affichés sur la sortie d'erreur au lieu de la sortie standard. La fonction main a été sortie de la classe \verb+Controller+ afin d'avoir un programme encore plus modulaire.
 
-De plus, deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permettent de stocker et d'aller rechercher les journaux pour les différents types de champs.
+De plus deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permettent de stocker et d'aller recherche les journaux pour les différents types de champs.
 \newpage
-\section{Diagramme UML de classe}
 
+\section{Diagramme UML de classe}
+%Voir fin du rapport.
+%\begin{figure}[!h]
+\begin{center}
 \includegraphics[width=24cm, angle=90]{dia.jpg}
+\end{center}
+%\end{figure}
+%\newpage
+
 
 \section{Questions liées au problème posé}
+
 \subsection*{Question 9}
+\textit{Faites une étude expérimentale comparative sur l’efficacité de la recherche dans un dictionnaire ordonné ou non. Cette étude expérimentale confirme-t-elle les bornes théoriques pour l’opération \texttt{find} des structures de données utilisées ?} \\ \medskip
+
+
+
 
 \subsection*{Question 10}
+\textit{Avec quelle facilité avez-vous pu adapter votre solution au problème de la mission précédente pour le problème posé ici ? Qu’est-ce que vous avez pu réutiliser dans votre code ? Qu’est-ce que
+vous avez été obligés d’implémenter ou de réimplémenter ? Votre solution à cette mission est-elle plus générique que celle de la mission précédente ? Pourquoi ? Les éventuels problèmes de réutilisation sont-ils apparus dans la phase de conception ou de programmation ? Quels conseils donneriez-vous pour faciliter la réutilisation du code produit ?} \\ \medskip
+
 Étant donné que la mission précédente était fortement similaire à celle-ci, il a été plus simple de se lancer dans le projet. 
 La totalité des classes de l'ancienne mission ont été reprises. Certaines, comme \verb+Dialogue+, ont été modifiées afin de correspondre aux nouvelles exigences de la mission, car désormais plusieurs types de recherches sont possibles. 
 
@@ -86,6 +100,8 @@ Notre mission précédente était déjà fortement générique, mais à présent
 Pour ce faire, il peut modifier les classes qui l'intéressent et cela fonctionnera toujours sans toucher à aucune autre classe du code.
 
 \subsection*{Question 11}
+\textit{Les données du problème posé sont présentées sous la forme d’un fichier texte \texttt{Journals.csv}. Il s’agit de données réelles et donc éventuellement entâchées d’erreur(s) ou de cas particuliers à traiter. Citez des erreurs typiques ou cas particuliers présents dans ces données. Comment les identifier automatiquement ? En quoi votre solution au problème posé permet-elle de gérer adéquatement ces cas ? Argumentez.} \\ \medskip
+
 
 L'erreur la plus courante est le nombre incorrect de virgules dans une ligne du fichier texte. Dans le cas d'un manque de virgule, la ligne est tout simplement ignorée et le programme continue de parser les lignes suivantes.
 
@@ -104,7 +120,7 @@ Si les champs d'une ligne sont en désordre, alors il nous est impossible de cor
 \section{Répartition du travail}
 \begin{itemize}
 
-\item Rédaction du rapport : Sundeep, Jonathan, Mathieu et Boris
+\item Rédaction du rapport : Sundeep, Jonathan, Mathieu et Boris.
 \item Conception du programme : Tanguy, Jonathan et Alexandre.
 
 \end{itemize}
