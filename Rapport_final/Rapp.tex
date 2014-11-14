@@ -64,29 +64,33 @@ Dans le cadre du cours "Algorithmique et structures de données", il nous a ét�
 La quasi-totalité du code de la mission précédente a été repris. À celui-ci, quelques modifications ont été effectuées afin de tenir compte des remarques de la correction croisée. Par exemple, une exception est lancée en cas d'une ligne mal encodée. De plus, nos messages d'erreur sont maintenant affichés sur la sortie d'erreur au lieu de la sortie standard. La fonction main a été sortie de la classe \verb+Controller+ afin d'avoir un programme encore plus modulaire.
 
 De plus deux nouvelles classes \verb+BinaryTreeSearch+ et \verb+Search+ permettent de stocker et d'aller recherche les journaux pour les différents types de champs.
-\newpage
 
 \section{Diagramme UML de classe}
-%Voir fin du rapport.
-%\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=24cm, angle=90]{dia.jpg}
-\end{center}
-%\end{figure}
-%\newpage
-
+Voir annexe.
 
 \section{Questions liées au problème posé}
 
 \subsection*{Question 9}
 \textit{Faites une étude expérimentale comparative sur l’efficacité de la recherche dans un dictionnaire ordonné ou non. Cette étude expérimentale confirme-t-elle les bornes théoriques pour l’opération \texttt{find} des structures de données utilisées ?} \\ \medskip
 
+Afin d'effectuer cette étude expérimentale, il nous suffit de calculer le temps nécessaire à la recherche d'un élément pris au hasard dans un dictionnaire à \textit{n} entrées.
+\begin{itemize}
+\item Soit ABR, notre arbre binaire de recherche
+\item Soit n, le nombre d'entrées dans notre fichier Journal.csv
+\item Soit T, le temps que prend une opération de recherche dans notre ABR
+\end{itemize}
 
+\bigskip
 
+Pour notre code avec dictionnaire ordonné de la mission 4: \\
+Si n = 20715 et que l'on cherche précisément un journal selon son titre, nous avons obtenu un résultat en moyenne\footnote{\label{test}Moyenne calculée sur base de recherche sur 10 journaux pris au hasard dans le fichier \textit{Journals.csv}.} de 25861.$10^{-9}$sec. 
 
+\bigskip
+
+Pour notre code avec dictionnaire non-ordonné de la mission 3: \\
+Si n = 20715 et que l'on cherche précisément un journal selon son titre, nous avons obtenu un résultat en moyenne\footnote{\ref{test}} de 28579.$10^{-9}$sec. 
 \subsection*{Question 10}
-\textit{Avec quelle facilité avez-vous pu adapter votre solution au problème de la mission précédente pour le problème posé ici ? Qu’est-ce que vous avez pu réutiliser dans votre code ? Qu’est-ce que
-vous avez été obligés d’implémenter ou de réimplémenter ? Votre solution à cette mission est-elle plus générique que celle de la mission précédente ? Pourquoi ? Les éventuels problèmes de réutilisation sont-ils apparus dans la phase de conception ou de programmation ? Quels conseils donneriez-vous pour faciliter la réutilisation du code produit ?} \\ \medskip
+\textit{Avec quelle facilité avez-vous pu adapter votre solution au problème de la mission précédente pour le problème posé ici ? Qu’est-ce que vous avez pu réutiliser dans votre code ? Qu’est-ce que vous avez été obligés d’implémenter ou de réimplémenter ? Votre solution à cette mission est-elle plus générique que celle de la mission précédente ? Pourquoi ? Les éventuels problèmes de réutilisation sont-ils apparus dans la phase de conception ou de programmation ? Quels conseils donneriez-vous pour faciliter la réutilisation du code produit ?} \\ \medskip
 
 Étant donné que la mission précédente était fortement similaire à celle-ci, il a été plus simple de se lancer dans le projet. 
 La totalité des classes de l'ancienne mission ont été reprises. Certaines, comme \verb+Dialogue+, ont été modifiées afin de correspondre aux nouvelles exigences de la mission, car désormais plusieurs types de recherches sont possibles. 
@@ -111,7 +115,6 @@ Dans ce cas, nous supposons que ces virgules se trouvent en réalité dans le ti
 Une autre erreur serait une ligne vide, mais nous nous retrouverons alors dans le cas de virgules manquantes.
 
 Si les champs d'une ligne sont en désordre, alors il nous est impossible de corriger cette erreur.
-\end{document}
 
 \section{Analyse de la complexité calculatoire}
 \subsection{Complexité temporelle}
@@ -126,3 +129,9 @@ La méthode \texttt{interpreteFile()} de la classe \textit{Controller} est de co
 \section{Difficultés rencontrées}
 
 Grâce aux questions de la séance intermédiaire, nous avons décortiqué le problème ce qui nous a permis de préparer correctement la partie implémentation. Nous n'avons donc pas rencontré de réels problèmes lors de la partie développement du programme. De plus, la mission précédente nous a permis de partir sur de bonnes bases.
+
+\section{Annexe}
+\begin{center}
+\includegraphics[width=19.5cm, angle=90]{dia.jpg}
+\end{center}
+\end{document}
